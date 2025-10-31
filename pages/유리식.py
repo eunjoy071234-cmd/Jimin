@@ -5,6 +5,17 @@ import sympy as sp
 # 📘 페이지 설정
 # -----------------------------
 st.set_page_config(page_title="유리식의 개념 학습", page_icon="📘")
+
+# ✅ 배경색 적용 (#d4f4ff)
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: #d4f4ff;
+}
+</style>
+"""
+st.markdown(page_bg, unsafe_allow_html=True)
+
 st.title("📘 유리식의 개념과 계산법")
 st.write("이 페이지에서는 **유리식의 뜻**, **성질**, **사칙연산 방법**을 배우고 직접 계산해볼 수 있습니다.")
 
@@ -74,7 +85,7 @@ try:
 
     st.success("✅ 계산 완료! 유리식의 사칙연산 결과를 위에서 확인하세요.")
 
-except Exception as e:
+except Exception:
     st.error("❌ 식을 해석할 수 없습니다. 올바른 형태로 입력해주세요 (예: (x+1)/(x-2)).")
 
 # -----------------------------
